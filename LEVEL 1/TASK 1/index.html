@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-in-One Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button[type="submit"] {
+            padding: 8px 20px;
+            background-coloR: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        #cognifyz-info {
+            display: none;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Cognify Technologies</h1>
+    </header>
+    <main>
+        <h2 id="cognifyz-info">About Cognifyz Technologies</h2>
+        <p id="cognifyz-text">
+            Cognifyz Technologies is a leading technology company that specializes in the dynamic field of data science and excels in delivering impactful projects and solutions.
+        </p>
+        <img src="download(1).png" alt="Cognify Technologies">
+        <form onsubmit="return submitForm()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <button type="submit">Submit</button>
+        </form>
+        <p id="success-msg" style="display: none; color: green;">Form submitted successfully!</p>
+    </main>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showCognifyzInfo()">Home</a></li>
+            <li><a href="#" onclick="showCognifyzInfo()">About</a></li>
+            <li><a href="https://www.linkedin.com/company/cognifyz-techonologies//">Contact</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        function showCognifyzInfo() {
+            var info = document.getElementById("cognifyz-info");
+            var text = document.getElementById("cognifyz-text");
+            if (info.style.display === "none") {
+                info.style.display = "block";
+                text.style.display = "block";
+            } else {
+                info.style.display = "none";
+                text.style.display = "none";
+            }
+        }
+
+        function submitForm() {
+            var name = document.getElementById("name").value;
+            var successMsg = document.getElementById("success-msg");
+            successMsg.style.display = "block";
+            return false; // Prevent form from submitting and page from reloading
+        }
+    </script>
+</body>
+</html>
