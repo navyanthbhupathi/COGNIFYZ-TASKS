@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-in-One Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #color-btn {
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #color-btn:hover {
+            background-color: darkblue;
+        }
+
+        .calculator {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .calculator input[type="number"] {
+            padding: 8px;
+            width: 100px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .calculator button {
+            padding: 8px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .calculator button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Cognifyz</h1>
+    </header>
+
+    <section id="color-change-section" style="text-align: center;">
+        <button id="color-btn" onclick="changeColor()">Click me to change color</button>
+    </section>
+
+    <section id="greeting-section" style="text-align: center; margin-top: 20px;">
+        <button onclick="displayGreeting()">Display Greeting</button>
+    </section>
+
+    <section class="calculator" style="text-align: center; margin-top: 20px;">
+        <label for="num1">Enter first number:</label>
+        <input type="number" id="num1">
+        <br>
+        <label for="num2">Enter second number:</label>
+        <input type="number" id="num2">
+        <br>
+        <button onclick="calculate()">Calculate</button>
+        <br>
+        <p id="result"></p>
+    </section>
+
+    <script>
+        function changeColor() {
+            var button = document.getElementById('color-btn');
+            var randomColor = '#' + Math.floor(Math.random()*16777215).toString(16); // Generate random color
+            button.style.backgroundColor = randomColor;
+        }
+
+        function displayGreeting() {
+            var now = new Date();
+            var hour = now.getHours();
+            var greeting;
+
+            if (hour < 12) {
+                greeting = 'Good morning!';
+            } else if (hour < 18) {
+                greeting = 'Good afternoon!';
+            } else {
+                greeting = 'Good evening!';
+            }
+
+            alert(greeting);
+        }
+
+        function calculate() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            var result = num1 + num2;
+            document.getElementById('result').innerText = 'Result: ' + result;
+        }
+    </script>
+</body>
+</html>
