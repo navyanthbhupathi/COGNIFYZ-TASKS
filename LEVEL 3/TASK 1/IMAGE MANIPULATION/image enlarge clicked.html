@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .thumbnail {
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .thumbnail img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .main-image {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 999;
+        }
+
+        .main-image img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <div class="thumbnail" onclick="showImage('image1.jpg')">
+            <img src="image1-thumb.jpg" alt="Allu Arjun">
+        </div>
+        <div class="thumbnail" onclick="showImage('image2.jpg')">
+            <img src="image2-thumb.jpg" alt="Ram Charan">
+        </div>
+        <div class="thumbnail" onclick="showImage('image3.jpg')">
+            <img src="image3-thumb.jpg" alt="Prabhas">
+        </div>
+    </div>
+
+    <div class="main-image" id="mainImage">
+        <img id="largeImage">
+    </div>
+
+    <script>
+        function showImage(image) {
+            var mainImage = document.getElementById('largeImage');
+            mainImage.src = image;
+            var modal = document.getElementById('mainImage');
+            modal.style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
